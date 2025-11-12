@@ -1,19 +1,54 @@
-# Brain-Tumor-Detection-using-CNN-and-IWD-MATLAB-
-This project implements a brain tumor detection system using a custom-built Convolutional Neural Network (CNN) combined with Intelligent Water Drops (IWD) optimization. It is developed in MATLAB and includes a GUI for visualization and interaction.
-# Brain Tumor Detection using CNN + IWD
+# 🧠 Brain Tumor Detection using MRI Images (MATLAB Project)
 
-This MATLAB project uses a CNN model and Intelligent Water Drops (IWD) optimization technique to detect and segment brain tumors from MRI images.
+Branch: Electronics and Communication Engineering (ECI)
+Semester: 5th
+Course: Digital Image Processing
 
-## Features
-- Custom CNN implementation
-- Intelligent Water Drops for optimization
-- GUI in MATLAB (`brain_tumor_gui.m`)
-- Sample MRI dataset included
+## 📘 Project Overview
 
-## How to Run
-1. Open MATLAB
-2. Run `brain_tumor_gui.m` or `cnn_tumor_train.m` to start training
-3. Use `cnn_tumor_test.m` or GUI for predictions
+This project implements a MATLAB-based system for detecting brain tumors in MRI images.
+It includes preprocessing, skull stripping, segmentation, and performance evaluation steps.
 
-## Credits
-Modified by **Sowmya** based on publicly available academic code for educational purposes.
+The project features a custom MATLAB GUI (`brain_tumor_gui.m`) that visually displays:
+- The original MRI image
+- Denoised output
+- Skull-stripped image
+- Segmented tumor region
+- Computed performance metrics
+
+## ⚙️ Workflow Pipeline
+
+Input MRI Image → Preprocessing (Denoising) → Skull Stripping → Segmentation (FCM / K-Means) → Postprocessing → Performance Evaluation → GUI Visualization
+
+## 🧩 Key Features
+
+🧼 Preprocessing: Noise removal using Median or Gaussian filters  
+💀 Skull Stripping: Threshold-based morphological operations  
+🎯 Segmentation: Fuzzy C-Means (FCM) or K-Means clustering  
+📊 Evaluation: Precision, Recall, F1-score, Accuracy, Dice coefficient  
+🖥️ MATLAB GUI: Visualizes all steps and outputs results in real-time  
+
+## 🧠 Dataset
+
+Supported datasets:
+- Kaggle: Brain MRI Images for Brain Tumor Detection  
+  https://www.kaggle.com/navoneel/brain-mri-images-for-brain-tumor-detection  
+- Figshare: Brain Tumor MRI Dataset  
+  https://figshare.com/articles/dataset/brain_tumor_dataset/1512427  
+
+## 💻 Software Requirements
+
+MATLAB R2017a or later  
+Image Processing Toolbox  
+Fuzzy Logic Toolbox (for FCM clustering)
+
+## 🧮 Algorithm (Step-by-Step)
+
+Step 1 — Input MRI Image  
+Load MRI scan using MATLAB’s uigetfile.
+
+Step 2 — Preprocessing  
+Apply Median filter to remove salt & pepper noise.
+```matlab
+I = imread('sample_mri.jpg');
+denoise_img = medfilt2(rgb2gray(I), [3 3]);
