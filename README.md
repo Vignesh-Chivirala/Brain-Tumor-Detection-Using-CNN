@@ -16,4 +16,4 @@ This MATLAB project uses a CNN model and Intelligent Water Drops (IWD) optimizat
 3. Use `cnn_tumor_test.m` or GUI for predictions
 
 ## Credits
-Modified by **Sowmya** based on publicly available academic code for educational purposes.
+Modified by **Vignesh** based on publicly available academic code for educational purposes.
